@@ -1,0 +1,109 @@
+
+
+.item{
+ 
+display: flex;
+padding: 70px;
+
+}
+
+.item-info{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+margin-left: 50px;
+margin-right: 50px;
+}
+
+.item-info button{
+margin-bottom: 15px;
+}
+
+.item-price button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+width: 50px;
+height: 50px;
+font-size: 25px;
+}
+
+.item-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+
+.item-price h5{
+    font-size: 60px;
+}
+
+.item-price span{
+    font-size: 30px;
+    margin-left: 5px;
+    color: blueviolet;
+}
+
+.featured-slide {
+position: relative;
+top: 0;
+
+}
+
+.cent{
+    font-size: 10px;
+}
+
+
+
+.app-image-gallery {
+border-radius: 3vw;
+z-index: 10;
+  position: relative;
+height: 35vw;
+width: 40vw;
+background-color: white;
+}
+
+.item-descraption{
+ width: 400px;
+margin-right: 50px;
+}
+.item-specifics{
+   width: 300px;
+}
+
+.item-specifics p, .item-descraption p{
+   color: #aaa;
+ }
+
+.appShadowGallery {
+  content: "";
+  width: 37vw;
+  height: 34vw;
+position: absolute;
+top: 9%;
+  transform: translate(6%, 0);
+filter: blur(40px);
+transition:background .5s linear;
+}
+
+.app-image-gallery button, .app-image-gallery button:hover, .app-image-gallery button:active {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.featured-thumb img{
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.featured-slide img{
+    width: 100%;
+    height: 34vw;
+}
+
+.featured-thumb {
+  margin-top: 2.5vw;
+}
