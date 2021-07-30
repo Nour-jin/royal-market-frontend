@@ -9,7 +9,7 @@ import Footer from "../footer/Footer";
 import Slider from "react-animated-slider";
 import "./slider-animations.css";
 import "react-animated-slider/build/horizontal.css";
-import { usePalette } from 'react-palette'
+
 import axios from "axios";
 import Card3D from "./Card3D";
 import { Swiper, SwiperSlide } from "swiper/react";
