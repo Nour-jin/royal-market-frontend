@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
      "build": "babel src -d lib",
-    "test": "jest"
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
