@@ -11,14 +11,14 @@ console.log(user)
 
   useEffect(() => {
   oneTime()
-  }, [watch])
+  }, [])
   
 
   const oneTime = () => {
     auth()
-    axios.get("http://localhost:3001/products/watch").then(response => {
+    axios.get("https://online-shop-by-jin.herokuapp.com/products/watch").then(response => {
       console.log("watch", response.data)
-      dispatch({ type: "GET_WATCH_LOCAL", payload: response.data })
+      dispatch({ type: "GET_WATCH", payload: response.data })
     })
   }
 

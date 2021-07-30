@@ -1,1 +1,1 @@
-export const API_ROOT = 'http://localhost:3001/products';
+export const API_ROOT = 'https://online-shop-by-jin.herokuapp.com/products';

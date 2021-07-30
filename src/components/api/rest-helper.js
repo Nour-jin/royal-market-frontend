@@ -17,7 +17,7 @@ export const deleteReq = (id) => {
    return axios.delete(`${API_ROOT}/${id}`)
 }
 
-export const getsReq = () => {
+export const getsReq = (userId) => {
     return axios.get(`${API_ROOT}/`);
 };
 

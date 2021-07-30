@@ -17,7 +17,7 @@ const handleChange = (e) => {
    
     const searchApi = (e) => {
        
-        axios.get("http://localhost:3001/products/search", {
+        axios.get("https://online-shop-by-jin.herokuapp.com/products/search", {
             params: {
                 query: input.trim()
             }

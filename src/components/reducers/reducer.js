@@ -87,15 +87,7 @@ export const recentReducer = (state, action) => {
 
 export const watchReducer = (state, action) => {
   switch (action.type) {
-    case "WATCH_ITEM":
-      const hasItem = state.some((el) => el._id === action.payload._id);
-      if (!hasItem) {
-        const watch = [...state, action.payload];
-        return watch;
-      } else {
-        return state.filter((el) => el._id !== action.payload._id);
-      }
-      case "SEARCH_DATA":
+    case "GET_WATCH":
         return action.payload;
     case "DELETE_ITEM":
       return state.filter((el) => el._id !== action.payload._id);

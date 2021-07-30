@@ -23,7 +23,7 @@ function HomeApi() {
   const { dispatch, products, user } = useContext(prodactsConext);
   const [curent, setcurent] = useState(Number);
 
-
+console.log("user", user)
   SwiperCore.use([Pagination]);
   // Creat Fack User if there is no real User
   if (!user.user) {

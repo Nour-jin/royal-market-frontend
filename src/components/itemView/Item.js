@@ -30,8 +30,8 @@ const Item = () => {
     setImages(
       product.img
         ? product.img.map((url) => ({
-            original: `http://localhost:3001/${url.original}`,
-            thumbnail: `http://localhost:3001/${url.original}`,
+            original: `https://online-shop-by-jin.herokuapp.com/${url.original}`,
+            thumbnail: `https://online-shop-by-jin.herokuapp.com/${url.original}`,
             originalClass: "featured-slide",
             thumbnailClass: "featured-thumb",
             description: "",

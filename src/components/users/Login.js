@@ -17,7 +17,7 @@ const Login = () => {
 
   const submit = (data) => {
     axios
-      .post(`http://localhost:3001/users/login`, data)
+      .post(`https://online-shop-by-jin.herokuapp.com/users/login`, data)
       .then((result) => {
         console.log("result", result);
         dispatch({ type: "LOGIN_SUCCESS", payload: result.data });

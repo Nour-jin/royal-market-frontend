@@ -48,7 +48,7 @@ const likeHandler = (postId, userId) => {
       
         {el.img
           .map((imeEl) => (
-            <img src={"http://localhost:3001/" + imeEl.original} alt="" />
+            <img src={"https://online-shop-by-jin.herokuapp.com/" + imeEl.original} alt="" />
           ))
           .slice(0, 1)}
         
@@ -58,7 +58,7 @@ const likeHandler = (postId, userId) => {
               className="shadow3d"
               style={{
                 backgroundImage: `url(${
-                  "http://localhost:3001/" + imeEl.thumb
+                  "https://online-shop-by-jin.herokuapp.com/" + imeEl.thumb
                 })`,
               }}
             />

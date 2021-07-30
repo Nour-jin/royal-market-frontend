@@ -20,7 +20,7 @@ const BasketList = ({ product, dispatch }) => {
                     <img
                       key={product._id}
                       style={{ maxWidth: "100%" }}
-                      src={"http://localhost:3001/" + e}
+                      src={"http://localhost:3001/" + e.original}
                       alt={product.name}
                     />
                   )).slice(0, 1)}

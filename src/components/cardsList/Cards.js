@@ -17,7 +17,7 @@ const Cards = ({ card, dispatch }) => {
                   <img
                     key={card._id}
                     style={{ maxWidth: "100%" }}
-                    src={"http://localhost:3001/" + e}
+                    src={"https://online-shop-by-jin.herokuapp.com/" + e}
                     alt={card.name}
                   />
                 ))

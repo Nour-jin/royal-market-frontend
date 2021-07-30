@@ -19,7 +19,7 @@ const Register = () => {
   
     
     console.log("input", data);
-    axios.post(`http://localhost:3001/users/`, data).then((result) => {
+    axios.post(`https://online-shop-by-jin.herokuapp.com/users/`, data).then((result) => {
       console.log("result", result);
     });
   };
