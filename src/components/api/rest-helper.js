@@ -43,7 +43,7 @@ export const asyncLocalStorage = {
   
 export const likes = (postId, userId) => {
     let data = { like: postId };
-   return axios.put(`http://localhost:3001/products/${userId}/like`, data)
+   return axios.put(`https://online-shop-by-jin.herokuapp.com/products/${userId}/like`, data)
   };
 
 
