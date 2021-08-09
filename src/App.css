@@ -4,7 +4,6 @@
 @import url("https://fonts.googleapis.com/css?family=Pirata+One|Rubik:900");
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@800&family=IBM+Plex+Sans:wght@500;700&family=Poiret+One&display=swap");
 
 * {
@@ -1544,11 +1543,7 @@ margin-bottom: 9vw;
 margin-top: 100px;
 }
 
-.masonry{
-min-height: 700px;
-  columns: 5;
-  column-gap: 2vw;
-}
+
 
 .TiltCard3D:hover .card3D-vertical .inner-card {
   transform: translateZ(60px);
@@ -1557,7 +1552,6 @@ min-height: 700px;
 .card3D-vertical {
   background-color: #fff;
   position: relative;
-  margin-bottom: 2vw;
   box-shadow: 0 70px 63px -60px #4948488d;
   border-radius: 15px;
 }
@@ -1644,6 +1638,28 @@ min-height: 700px;
 
   background-color: blueviolet;
 }
+
+/* watch */
+
+.card3D-icon-watch{
+  position: absolute;
+  right: 5%;
+  bottom: 2.5%;
+  background-color: #e4e4e4;
+  padding: 0 10px 0 10px; 
+  border-radius: 1vw;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.201);
+  cursor: pointer;
+}
+
+.card3D-likeCount-watch{
+position: absolute;
+right: 29%;
+font-size: 12px;
+bottom: 2.5%;
+}
+
+
 
 
 

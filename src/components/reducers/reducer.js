@@ -39,11 +39,8 @@ export const productsReducer = (state, action) => {
 export const likesReducer = (state , action) => {
   switch (action.type) {
     case "ADD_LIKE":
-      console.log("likeProduct", action.payload.likes)
       const hasLike = action.payload.likes.some((item) => item == action.payload.likeProduct);
-      console.log("hasLike", hasLike)
       if (hasLike) {
-          console.log("state", state)
           return true
         } else {
           return false
