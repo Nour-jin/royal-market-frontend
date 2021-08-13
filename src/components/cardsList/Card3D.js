@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Tilt from "react-parallax-tilt";
 import HartsLove from "./HartsLove";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { prodactsConext } from "../context/contextData";
 import { likes } from "../api/rest-helper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,7 +10,7 @@ function Card3D({ el }) {
   const [like, setlike] = useState(false);
   const imgColor = el.img.map((imeEl) => imeEl.color.Vibrant);
   const { user } = useContext(prodactsConext);
-
+  const [redirect, setRedirect] = useState(false);
   useEffect(() => {
     if (el.loggedInUserLiked > 0) {
       setlike(true);
@@ -20,15 +20,20 @@ function Card3D({ el }) {
   }, [el]);
 
 
-const likeHandler = (postId, userId) => {
-  likes(postId, userId).then((response) => {
-    const hasLike = response.data.likes.some((item) => item == postId);
-    if (hasLike) {
-       setlike(true)
-      } else {
-        setlike(false)
-      }
-  })
+  const likeHandler = (postId, userId) => {
+    if (user.loggedIn === true) {
+      setRedirect(false)
+      likes(postId, userId).then((response) => {
+        const hasLike = response.data.likes.some((item) => item == postId);
+        if (hasLike) {
+          setlike(true)
+        } else {
+          setlike(false)
+        }
+      })
+    } else {
+      setRedirect(true)
+    }
 }
 
 
@@ -43,7 +48,7 @@ const likeHandler = (postId, userId) => {
       glarePosition="bottom"
       glareBorderRadius="20px"
     >
-          
+        {redirect ? <Redirect to="/login" /> : ""}  
       <div className="card3D" style={{ color: imgColor[0] }}>
       
         {el.img

@@ -67,11 +67,10 @@ input {
 }
 
 .sellingForm button,
-.sellingForm input {
+.sellingForm input,.logginForm button, .logginForm input {
   width:100%;
   padding: 16px 25px;
   font-size: 16px;
-  
 }
 
 label {
@@ -86,7 +85,6 @@ label {
 }
 
 input {
-  width: 50px;
   margin-right: 8px;
   box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
   box-sizing: border-box;

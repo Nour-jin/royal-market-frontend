@@ -2,7 +2,7 @@ import { React, useState, useEffect, useContext } from "react";
 import Edit from "./Edit";
 import Buy from "../basket/Buy";
 import { auth, getReq, likes } from "../api/rest-helper";
-import { useParams } from "react-router-dom";
+import { useParams,Redirect } from "react-router-dom";
 import { prodactsConext } from "../context/contextData";
 import CheckLogIn from "../CheckLogIn";
 import "./item.css";
@@ -17,7 +17,7 @@ const Item = () => {
   const [images, setImages] = useState([]);
   const [count, setCount] = useState(0);
   const [like, setlike] = useState(false);
-
+  const [redirect, setRedirect] = useState(false);
   useEffect(() => {
     auth();
     getReq(id).then((result) => {
@@ -55,14 +55,19 @@ const Item = () => {
 
 
   const likeHandler = (postId, userId) => {
-    likes(postId, userId).then((response) => {
-      const hasLike = response.data.likes.some((item) => item == postId);
-      if (hasLike) {
-        setlike(true);
-      } else {
-        setlike(false);
-      }
-    });
+    if (user.loggedIn === true) {
+      setRedirect(false)
+      likes(postId, userId).then((response) => {
+        const hasLike = response.data.likes.some((item) => item == postId);
+        if (hasLike) {
+          setlike(true)
+        } else {
+          setlike(false)
+        }
+      })
+    } else {
+      setRedirect(true)
+    }
   };
 
 
@@ -70,7 +75,8 @@ const Item = () => {
   console.log(product)
 
   return (
-  <>
+    <>
+      {redirect ? <Redirect to="/login" /> : ""} 
     <div className="item">
       <div className="gallery">
         {images ? (

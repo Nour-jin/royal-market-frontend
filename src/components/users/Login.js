@@ -40,11 +40,14 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <>
       {redirect ? <Redirect to="/" /> : ""}
-      <div className="container">
-        <h2 className="text-center">Login</h2>
-        <form action="#" onSubmit={handleSubmit(submit)}>
+      <div className="containerSeller">
+     
+        <div className="segment">
+          <h1>Login</h1>
+        </div>
+        <form className="logginForm" action="#" onSubmit={handleSubmit(submit)}>
           <label htmlFor="email">
             <input
               {...register("email", { required: true })}
@@ -66,9 +69,11 @@ const Login = () => {
           <button type="submit" className="green">
             Login
           </button>
-        </form>
+          </form>
+          
       </div>
-    </div>
+     </>
+      
   );
 };
 
