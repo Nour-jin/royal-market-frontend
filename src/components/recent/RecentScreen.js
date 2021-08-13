@@ -16,7 +16,7 @@ function RecentScreen({ el }) {
     } else {
       setlike(false);
     }
-  }, []);
+  }, [el]);
 
 
 const likeHandler = (postId, userId) => {
@@ -32,6 +32,8 @@ const likeHandler = (postId, userId) => {
 
 
   return (
+
+
     <Tilt
       className="TiltCard3D"
       glareEnable={false}
@@ -40,8 +42,8 @@ const likeHandler = (postId, userId) => {
       glarePosition="bottom"
       glareBorderRadius="20px"
     >
-       
-      <div className="card3D-vertical" style={{ color: imgColor[0] }}>
+          
+      <div className="card3D" style={{ color: imgColor[0] }}>
       
         {el.img
           .map((imeEl) => (
@@ -81,8 +83,9 @@ const likeHandler = (postId, userId) => {
         <HartsLove like={like} />
         
       </div>
+
+      </Tilt>
      
-    </Tilt>
   );
 }
 

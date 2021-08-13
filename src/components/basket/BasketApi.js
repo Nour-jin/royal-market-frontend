@@ -3,7 +3,7 @@ import BasketList from "./BasketList";
 import Buy from "./Buy";
 import { prodactsConext } from "../context/contextData";
 import { BasketSvg } from "../watchList/TitleSvg";
-
+import img_url from "../api/service-info"
 const BaskeApi = () => {
   const { basket, dispatch } = useContext(prodactsConext);
 const {items, total} = basket

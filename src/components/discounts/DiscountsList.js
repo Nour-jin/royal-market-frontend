@@ -9,7 +9,7 @@ import SwiperCore, {
 } from 'swiper/core';
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
-  
+
 
 
 
@@ -22,7 +22,7 @@ const DiscountsList = () => {
 
   useEffect(() => {
     auth()
-    axios.get("https://online-shop-by-jin.herokuapp.com/products/deals").then(response => {
+    axios.get("http://localhost:3001/products/deals").then(response => {
       console.log("deal",response)
       dispatch({ type: "FATCH_SUCCESS_DISCOUNTS", payload: response.data })
     })

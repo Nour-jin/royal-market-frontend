@@ -74,6 +74,8 @@ export const recentReducer = (state, action) => {
       }
     case "GET_RECENT_LOCAL":
       return action.payload;
+      case "RECENT_ITEM_EMPTY":
+        return [];
     case "DELETE_ITEM_RECENT":
       return state.filter((el) => el._id !== action.payload._id);
     default:

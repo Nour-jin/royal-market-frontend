@@ -1,6 +1,6 @@
 import { React,useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import {img_url} from "../api/service-info"
 const Cards = ({ card, dispatch }) => {
 
 
@@ -17,7 +17,7 @@ const Cards = ({ card, dispatch }) => {
                   <img
                     key={card._id}
                     style={{ maxWidth: "100%" }}
-                    src={"https://online-shop-by-jin.herokuapp.com/" + e}
+                    src={img_url + e}
                     alt={card.name}
                   />
                 ))

@@ -5,12 +5,9 @@ import {auth, getsReq } from "../api/rest-helper";
 import RecentList from "../recent/RecentList";
 import DescountsList from "../discounts/DiscountsList";
 import ImgTest from "./ImgTest";
-import Footer from "../footer/Footer";
 import Slider from "react-animated-slider";
 import "./slider-animations.css";
 import "react-animated-slider/build/horizontal.css";
-
-import axios from "axios";
 import Card3D from "./Card3D";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { prodactsConext } from "../context/contextData";
 import { likes } from "../api/rest-helper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import {img_url} from "../api/service-info"
 function Card3D({ el }) {
   const [like, setlike] = useState(false);
   const imgColor = el.img.map((imeEl) => imeEl.color.Vibrant);
@@ -17,7 +17,7 @@ function Card3D({ el }) {
     } else {
       setlike(false);
     }
-  }, []);
+  }, [el]);
 
 
 const likeHandler = (postId, userId) => {
@@ -48,7 +48,7 @@ const likeHandler = (postId, userId) => {
       
         {el.img
           .map((imeEl) => (
-            <img src={"https://online-shop-by-jin.herokuapp.com/" + imeEl.original} alt="" />
+            <img src={img_url + imeEl.original} alt="" />
           ))
           .slice(0, 1)}
         
@@ -58,7 +58,7 @@ const likeHandler = (postId, userId) => {
               className="shadow3d"
               style={{
                 backgroundImage: `url(${
-                  "https://online-shop-by-jin.herokuapp.com/" + imeEl.thumb
+                  img_url + imeEl.thumb
                 })`,
               }}
             />

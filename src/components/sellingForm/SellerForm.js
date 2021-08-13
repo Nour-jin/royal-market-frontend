@@ -1,4 +1,4 @@
-import { React, useState, useContext } from "react";
+import { React, useState, useContext,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { auth, postReq } from "../api/rest-helper";
 import { prodactsConext } from "../context/contextData";
@@ -6,6 +6,7 @@ import { prodactsConext } from "../context/contextData";
 const SellerForm = () => {
   const [inputText, setInputText] = useState({ img: [] });
   const { user, dispatchUser } = useContext(prodactsConext);
+
 
   const deleteHandler = (e) => {
     console.log("btn", e);
@@ -48,14 +49,14 @@ const SellerForm = () => {
   };
 
   return (
-    <div className="container">
-      <Link to="/">Home</Link>
+    <div className="containerSeller">
+      <div className="container-innit-seller">
       <div className="segment">
         <h1>Selling</h1>
       </div>
       <form className="sellingForm" action="#">
         <label htmlFor="Title">
-          <input
+            <input
             id="Title"
             placeholder="Title"
             value={inputText.title}
@@ -64,7 +65,8 @@ const SellerForm = () => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="category">
+          <label htmlFor="category"
+           >
           <input
             id="category"
             placeholder="Catorgy"
@@ -104,8 +106,8 @@ const SellerForm = () => {
             />
           </label>
         </div>
-        <button onClick={handleSubmit} className="red" type="button">
-          <i className="icon ion-md-lock"></i>Submit
+        <button onClick={handleSubmit} className="btnSubmit" type="button">
+          Submit
         </button>
       </form>
       <div className="photosReview">
@@ -120,7 +122,8 @@ const SellerForm = () => {
             <img className="imges" src={URL.createObjectURL(im)} alt="non" />
           </div>
         ))}
-      </div>
+        </div>
+        </div>
     </div>
   );
 };

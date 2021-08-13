@@ -7,6 +7,7 @@ const NavBar = () => {
   const { user, dispatch } = useContext(prodactsConext);
   const [open, setOpen] = useState(false)
 
+  
 
 const searchToggle = (e) => {
   setOpen(!open)
@@ -23,7 +24,7 @@ const searchToggle = (e) => {
             ) : (
               ""
             )}{" "}</li>
-            <li><Link className={ open ? "menu-item hide-item" :"menu-item"}  to="/sellerForm">Sell</Link></li>
+          <li><Link className={open ? "menu-item hide-item" : "menu-item"} to="/sellerForm">Sell</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/watch">Watch</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/register">Sing up</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/basketList">Basket</Link></li>
@@ -33,6 +34,7 @@ const searchToggle = (e) => {
               className={ open ? "menu-item hide-item" :"menu-item"}
                 onClick={() => {
                   dispatch({ type: "LOGOUT_USER", payload: "" });
+                  dispatch({ type: "RECENT_ITEM_EMPTY"})
                   let keysToRemove = ["user", "x-auth"];
                   for (let key of keysToRemove) {
                     localStorage.removeItem(key);

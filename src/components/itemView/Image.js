@@ -2,7 +2,7 @@ import React, { useState, useEffect,CSSProperties } from "react";
 import "./item.css";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-
+import {img_url} from "../api/service-info"
 
 
 const Image = ({ el }) => {
@@ -12,8 +12,8 @@ const [count, setCount] = useState(0)
     setImages(
       el.img
         ? el.img.map((url) => ({
-            original: `https://online-shop-by-jin.herokuapp.com/${url.original}`,
-            thumbnail: `https://online-shop-by-jin.herokuapp.com/${url.original}`,
+            original: `img_url${url.original}`,
+            thumbnail: `img_url${url.original}`,
             originalClass: "featured-slide",
             thumbnailClass: "featured-thumb",
             description: "",

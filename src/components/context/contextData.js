@@ -15,11 +15,10 @@ export const ProductsProvider = (props) => {
   useEffect(() => localStorage.setItem("basket", JSON.stringify(basket)), [basket]);
   useEffect(() => localStorage.setItem("user", JSON.stringify(user)), [user]);
   useEffect(() => localStorage.setItem("recent", JSON.stringify(recent)), [recent]);
-  useEffect(() => localStorage.setItem("discounts", JSON.stringify(discounts)), [discounts]);
 
 
   const getLocal = () => {
-    let keysToAdd = ["user", "basket", "watch", "recent","discounts"];
+    let keysToAdd = ["user", "basket", "recent"];
     for (let key of keysToAdd) {
         if (localStorage.getItem(key) === null) {
         localStorage.setItem(key, JSON.stringify([]));

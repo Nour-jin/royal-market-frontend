@@ -27,6 +27,7 @@ const Login = () => {
         axios.defaults.headers.common["x-auth"] = token;
         if (result.status == 200) {
           setRedirect(true);
+          dispatch({ type: "RECENT_ITEM_EMPTY"});
         }
       })
       .catch((error) => {

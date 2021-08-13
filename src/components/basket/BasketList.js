@@ -1,6 +1,6 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
-
+import {img_url} from "../api/service-info"
 
 const BasketList = ({ product, dispatch }) => {
 
@@ -20,7 +20,7 @@ const BasketList = ({ product, dispatch }) => {
                     <img
                       key={product._id}
                       style={{ maxWidth: "100%" }}
-                      src={"http://localhost:3001/" + e.original}
+                      src={img_url + e.original}
                       alt={product.name}
                     />
                   )).slice(0, 1)}
