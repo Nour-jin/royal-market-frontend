@@ -55,6 +55,13 @@ input {
   background-color: #ebecf0;
  /* text-shadow: 1px 1px 0 #fff; */
 }
+.logginForm{
+  width: 500px;
+}
+.btnlogin{
+  font-size: 20px !important;
+  color: darkviolet;
+}
 
 .containerSeller{
   height: 97.7vh;
@@ -100,6 +107,8 @@ input:focus {
   box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
 
+
+
 button {
   color: #61677c;
   font-weight: bold;
@@ -130,6 +139,30 @@ button.unit {
 }
 button.unit .icon {
   margin-right: 0;
+}
+
+.formRegister{
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+.adressForm,.userForm, .btnRegister {
+  width: 50%;
+  margin: 20px;
+}
+.btnRegister{
+  font-size: 20px;
+  color: blueviolet;
+  margin: 0;
+transform: translate(50%, 50%);
+}
+
+.adressForm input, .userForm input{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 25px;
+  font-size: 16px;
 }
 .card {
   margin-left: 20px;

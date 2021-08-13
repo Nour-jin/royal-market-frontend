@@ -61,13 +61,14 @@ const Login = () => {
             <input
               {...register("password", { required: true })}
               id="password"
+              type="password"
               placeholder="password"
             />
             {errors.password && <span>This field is required</span>}
           </label>
 
           <div className="text-center text-danger">{err}</div>
-          <button type="submit" className="green">
+          <button type="submit" className="btnlogin">
             Login
           </button>
           </form>

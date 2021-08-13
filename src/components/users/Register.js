@@ -25,9 +25,15 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <h2 className="text-center">Register</h2>
-      <form action="#" onSubmit={handleSubmit(submit)}>
+    <div className="containerSeller">
+      <h2 className="segment">Register</h2>
+      <form  action="#" onSubmit={handleSubmit(submit)}>
+        <div className="formRegister">
+
+       
+        <div className="userForm">
+
+        
         <label htmlFor="firstName">
           <input
             {...register("firstName", { required: true })}
@@ -86,9 +92,12 @@ const Register = () => {
           />
         </label>
         {errors.userName && <span>Please don't use `!@#$%^&*()_+\-=\[\]{};':"\\|,.\/?~</span>}
- 
-        <Adress register={register} errors={ errors}/>
-        <button className="green" type="submit">
+        </div>
+        <div className="adressForm">
+           <Adress register={register} errors={ errors}/>
+        </div>
+        </div>
+        <button className="btnRegister" type="submit">
           Sing Up
         </button>
       </form>
