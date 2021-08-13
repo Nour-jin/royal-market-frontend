@@ -9,7 +9,7 @@ import SwiperCore, {
 } from 'swiper/core';
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
-
+import {API_ROOT} from '../api/service-info'
 
 
 
@@ -22,7 +22,7 @@ const DiscountsList = () => {
 
   useEffect(() => {
     auth()
-    axios.get("http://localhost:3001/products/deals").then(response => {
+    axios.get(`${API_ROOT}/deals`).then(response => {
       console.log("deal",response)
       dispatch({ type: "FATCH_SUCCESS_DISCOUNTS", payload: response.data })
     })
