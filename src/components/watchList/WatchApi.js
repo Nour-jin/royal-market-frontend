@@ -12,7 +12,7 @@ const WatchApi = () => {
 
   useEffect(() => {
   oneTime()
-  }, [],[user.user.likes])
+  }, [])
   
   const oneTime = () => {
     auth()

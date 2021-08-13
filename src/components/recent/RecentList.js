@@ -2,7 +2,6 @@ import { React, useContext } from "react";
 import RecentScreen from "./RecentScreen";
 import { prodactsConext } from "../context/contextData";
 import {RecentTitleSvg} from "../watchList/TitleSvg";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Pagination

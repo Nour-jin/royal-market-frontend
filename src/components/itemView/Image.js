@@ -12,8 +12,8 @@ const [count, setCount] = useState(0)
     setImages(
       el.img
         ? el.img.map((url) => ({
-            original: `img_url${url.original}`,
-            thumbnail: `img_url${url.original}`,
+            original: `https://online-shop-by-jin.herokuapp.com/${url.original}`,
+            thumbnail: `https://online-shop-by-jin.herokuapp.com/${url.original}`,
             originalClass: "featured-slide",
             thumbnailClass: "featured-thumb",
             description: "",
