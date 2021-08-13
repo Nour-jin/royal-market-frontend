@@ -25,7 +25,7 @@ const searchToggle = (e) => {
               ""
             )}{" "}</li>
           <li><Link className={open ? "menu-item hide-item" : "menu-item"} to="/sellerForm">Sell</Link></li>
-            <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/watch">Watch</Link></li>
+            <li><Link className={ open ? "menu-item hide-item" :"menu-item"}  to={user.loggedIn ? "/watch" :"/login"}>Watch</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/register">Sing up</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/basketList">Basket</Link></li>
             <li><a href="#" className={ open ? "menu-item hide-item" :"menu-item"}>Notifaction</a></li>

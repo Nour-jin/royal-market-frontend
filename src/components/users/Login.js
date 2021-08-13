@@ -41,10 +41,11 @@ const Login = () => {
 
   return (
     <>
-      {redirect ? <Redirect to="/" /> : ""}
+     
       <div className="containerSeller">
      
         <div className="segment">
+        {redirect ? <Redirect to="/" /> : ""}
           <h1>Login</h1>
         </div>
         <form className="logginForm" action="#" onSubmit={handleSubmit(submit)}>
