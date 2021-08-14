@@ -1,7 +1,7 @@
 import { React, useContext, useEffect, useState, useRef } from "react";
 import { prodactsConext } from "../context/contextData";
 import Cards from "./Cards";
-import {auth, getsReq } from "../api/rest-helper";
+import { auth, getsReq } from "../api/rest-helper";
 import RecentList from "../recent/RecentList";
 import DescountsList from "../discounts/DiscountsList";
 import ImgTest from "./ImgTest";
@@ -10,17 +10,15 @@ import "./slider-animations.css";
 import "react-animated-slider/build/horizontal.css";
 import Card3D from "./Card3D";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Pagination
-} from 'swiper/core';
+import SwiperCore, { Pagination } from "swiper/core";
 import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/pagination/pagination.min.css";
 
 function HomeApi() {
   const { dispatch, products, user } = useContext(prodactsConext);
   const [curent, setcurent] = useState(Number);
 
-console.log("user", user)
+  console.log("user", user);
   SwiperCore.use([Pagination]);
   // Creat Fack User if there is no real User
   if (!user.user) {
@@ -29,7 +27,7 @@ console.log("user", user)
   }
 
   useEffect(() => {
-    auth()
+    auth();
     getsReq().then((result) => {
       dispatch({ type: "FATCH_SUCCESS", payload: result.data });
     });
@@ -93,7 +91,13 @@ console.log("user", user)
       id: 3,
       scetion: "Comfortble",
     },
-    { img: "/images/svg/11.jpg", title: "live you'r Live", par: "Entertainment walls have become an important living room feature, and now provide stiff competition for the traditional feature fireplace. TV lovers want their box in pride of place to achieve the optimum viewing angle, so increasingly the lounge fireplace is being bumped to a side wall or corner adornment. This interior reshuffle leaves space to imagine a new living room feature wall with the TV at its centre. It also presents extra requirements for storage of receiver and recorder equipment", id: 4, scetion: "Vision" },
+    {
+      img: "/images/svg/11.jpg",
+      title: "live you'r Live",
+      par: "Entertainment walls have become an important living room feature, and now provide stiff competition for the traditional feature fireplace. TV lovers want their box in pride of place to achieve the optimum viewing angle, so increasingly the lounge fireplace is being bumped to a side wall or corner adornment. This interior reshuffle leaves space to imagine a new living room feature wall with the TV at its centre. It also presents extra requirements for storage of receiver and recorder equipment",
+      id: 4,
+      scetion: "Vision",
+    },
     {
       img: "/images/svg/Living_room_Wall_1.jpg",
       title: "Furniture",
@@ -108,36 +112,6 @@ console.log("user", user)
       id: 6,
       scetion: "Mobel",
     },
-  ];
-
-  const imagesSlide = [
-    {
-      img: "/images/Apple/apple1.jpg",
-      title: "iPhone 12",
-      par: "International Collection",
-    },
-    {
-      img: "/images/samsung/01.jpg",
-      title: "Samsung",
-      par: "Ultimate Collectios",
-    },
-    {
-      img: "/images/svg/Untitled-1.jpg",
-      title: "Huawei Mate",
-      par: "life your Moment",
-    },
-  ];
-
-  const images5 = [
-    {
-      img: "/images/samsung/galaxy2.jpg",
-      title: "Apple Watch",
-      par: "International Collection",
-    },
-    { img: "/images/samsung/bet room.jpg", title: "", par: "" },
-    { img: "/images/ikea/ein-bettgestell.jpg", title: "", par: "" },
-    { img: "/images/svg/dining-tabel1.jpg", title: "", par: "" },
-    { img: "/images/svg/white-livingroom.jpg", title: "", par: "" },
   ];
 
   const content = [
@@ -171,21 +145,19 @@ console.log("user", user)
   ];
 
   const pagination = {
-    "clickable": true,
-    "renderBullet": function (index, className) {
-            return '<span class=\"' + className + '\">' + (index + 1) + '</span>';
-          }
-  }
-  
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
 
-console.log("products", products)
+  console.log("products", products);
 
   return (
     <div className="container1">
       <div className="shadowMainBordR" />
       <div className="shadowMainBordL" />
       <Slider className="slider-wrapper" autoplay={4000}>
-      
         {content.map((item, index) => (
           <div
             key={index}
@@ -208,32 +180,36 @@ console.log("products", products)
           </div>
         ))}
       </Slider>
-<RecentList/>
+      <RecentList />
       <div className="wideCardViwer">
         <div className="textCardViwers">
           <h1>iPad Pro</h1>
           <p>Supercharged By Apple M1 chip</p>
         </div>
-        
+
         <img width="100%" src="/images/Apple/apple3.jpg" alt="" />
       </div>
 
       <div className="row ">
         {imagesTest.map((el, i) => (
-          <ImgTest el={el} i={i} products={products}/>
+          <ImgTest el={el} i={i} products={products} />
         ))}
       </div>
 
-     
-     
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={50}
+        pagination={pagination}
+        className="mySwiper"
+      >
+        {products.map((el) => (
+          <SwiperSlide>
+            <Card3D el={el} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-         
-        <Swiper      slidesPerView={4}
-      spaceBetween={50} pagination={pagination}  className="mySwiper">
-              {products.map((el) => <SwiperSlide><Card3D el={el} /></SwiperSlide>)}
-              </Swiper>
-
-     < DescountsList/>
+      <DescountsList />
     </div>
   );
 }
