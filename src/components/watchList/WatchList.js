@@ -47,7 +47,8 @@ function WatchList({ el, oneTime }) {
           .slice(0, 1)}
 
         <div className="inner-card">
-          <div>{el.price}</div>
+        <div style={{ "text-decoration":el.oldPrice ? "line-through" :""}}>{el.price}</div>
+          <div>{el.oldPrice}</div>
           <Link to={`item/${el._id}`}></Link>
           <div className="card3DFotter">
             <div className="card3D-title">{el.title}</div>
