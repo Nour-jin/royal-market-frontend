@@ -17,13 +17,15 @@ const searchToggle = (e) => {
 <nav>
     <div class="menu">
         <ul>
+        <li><Link className={open ? "menu-item hide-item" : "menu-item"} to="/">Royal</Link></li>
           <li>{user.loggedIn && user.user ? (
               <a className={ open ? "menu-item hide-item" :"menu-item"}>
                 Hi!.. {user.user.firstName} {user.user.lastName}
               </a>
             ) : (
               ""
-            )}{" "}</li>
+          )}{" "}</li>
+           
           <li><Link className={open ? "menu-item hide-item" : "menu-item"} to="/sellerForm">Sell</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"}  to={user.loggedIn ? "/watch" :"/login"}>Watch</Link></li>
             <li><Link className={ open ? "menu-item hide-item" :"menu-item"} to="/register">Sing up</Link></li>
@@ -49,7 +51,7 @@ const searchToggle = (e) => {
               </Link>
             )}</li>
           <li><a href="#" id="search" onClick={searchToggle}><i class={ open ? "fa fa-times" : "fa fa-search"}></i></a></li>
-            <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+          
         </ul>
         <Search open={open} />
        

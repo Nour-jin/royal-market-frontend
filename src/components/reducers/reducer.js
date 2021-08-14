@@ -36,6 +36,15 @@ export const productsReducer = (state, action) => {
   }
 };
 
+export const searchReducer = (state, action) => {
+  switch (action.type) {
+    case "SEARCH_DATA":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 export const likesReducer = (state , action) => {
   switch (action.type) {
     case "ADD_LIKE":
@@ -217,5 +226,6 @@ export const [profileReducer, initialProfile] = combineReducers({
   recent: [recentReducer, []],
   product: [productReducer, []],
   like: [likesReducer, false],
+  search: [searchReducer, []],
   basket: [basketReducer, { items: [], total: 0 }],
 });

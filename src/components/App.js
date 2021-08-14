@@ -21,7 +21,7 @@ function App() {
           <NavBar />
           <CheckLogIn path="/sellerForm" component={SellerForm} />
           <Route path="/" exact>
-            <HomeApi /> <Footer/>
+            <HomeApi /> 
           </Route>
           <Route path="/item/:id">
             <Item />
@@ -41,7 +41,7 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-         
+          <Footer/>
         </Route>
       </Switch>
     </Router>

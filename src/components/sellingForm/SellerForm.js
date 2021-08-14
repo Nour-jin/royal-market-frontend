@@ -5,7 +5,8 @@ import { prodactsConext } from "../context/contextData";
 
 const SellerForm = () => {
   const [inputText, setInputText] = useState({ img: [] });
-  const { user, dispatchUser } = useContext(prodactsConext);
+  const [message, setmessage] = useState("")
+  const { user } = useContext(prodactsConext);
 
 
   const deleteHandler = (e) => {
@@ -45,7 +46,13 @@ const SellerForm = () => {
       }
     }
     auth();
-    postReq(onData);
+    setmessage("Loading...")
+    postReq(onData).then(response => {
+      
+      if (response.data) {
+        setmessage("The product has been added, you can see it in the products list")
+      }
+    });
   };
 
   return (
@@ -109,7 +116,12 @@ const SellerForm = () => {
         <button onClick={handleSubmit} className="btnSubmit" type="button">
           Submit
         </button>
-      </form>
+        </form>
+        <div className="text-center mt-3">
+          {message}
+        {message ?  <p>Do you want go to <Link to="/" className="vilote">Home Page</Link> </p> :""}
+        </div>
+        
       <div className="photosReview">
         {inputText.img.map((im) => (
           <div>
@@ -120,8 +132,11 @@ const SellerForm = () => {
               x
             </button>
             <img className="imges" src={URL.createObjectURL(im)} alt="non" />
+            
           </div>
+         
         ))}
+           
         </div>
         </div>
     </div>

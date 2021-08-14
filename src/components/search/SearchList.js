@@ -1,13 +1,11 @@
 import { React, useContext } from "react";
-import WatchList from "../watchList/WatchList";
 import { prodactsConext } from "../context/contextData";
 import {SearchTitleSvg} from "../watchList/TitleSvg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import SearchSview from './SearchSview'
+
 const SearchList = () => {
-  const { watch } = useContext(prodactsConext);
-
-
-  console.log("watch List", watch)
+  const { search } = useContext(prodactsConext);
 
   return (
     <div>
@@ -19,7 +17,7 @@ const SearchList = () => {
             
             >
                 <Masonry gutter={50}>
-                      {watch.map((el) => <WatchList key={el._id} el={el} />)}
+                      {search.map((el) => <SearchSview key={el._id} el={el} />)}
                       </Masonry>
             </ResponsiveMasonry>
         </div>

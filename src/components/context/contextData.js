@@ -5,7 +5,7 @@ export const prodactsConext = createContext();
 
 export const ProductsProvider = (props) => {
   const [state, dispatch] = useReducer(profileReducer, initialProfile);
-  const { watch, user, products, product, basket, recent, discounts, like } = state;
+  const { watch, user, products, product, basket, recent, discounts, search, like } = state;
 
   useEffect(() => {
     getLocal();
@@ -42,6 +42,7 @@ export const ProductsProvider = (props) => {
         product,
         discounts,
         recent,
+        search,
         like
       }}
     >

@@ -1,10 +1,9 @@
 import {React, useState,useContext} from 'react'
 import axios from 'axios'
 import { prodactsConext } from "../context/contextData";
-import WatchList from '../watchList/WatchApi';
 import { Redirect, useParams } from "react-router-dom";
 const Search = ({ open }) => {
-const [searchData, setsearchData] = useState([])
+
     const [input, setInput] = useState('')
     const {
         dispatch,
