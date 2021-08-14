@@ -35,20 +35,12 @@
   font-size: 60px;
 }
 
-.item-price span {
-  font-size: 30px;
-  margin-left: 5px;
-  color: blueviolet;
-}
-
 .featured-slide {
   position: relative;
   top: 0;
 }
 
-.cent {
-  font-size: 10px;
-}
+
 
 .app-image-gallery {
   border-radius: 3vw;
@@ -102,4 +94,27 @@
 
 .featured-thumb {
   margin-top: 2.5vw;
+}
+
+/* price */
+
+.oldPrice{
+  text-decoration: line-through;
+  font-size: 25px;
+}
+
+.cent{
+  color: darkviolet;
+  font-size: 30px;
+}
+
+.centBlock{
+ display: none;
+}
+
+
+
+
+.newPrice{
+  color: darkviolet;
 }
