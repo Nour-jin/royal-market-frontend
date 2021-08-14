@@ -16,6 +16,7 @@ const Login = () => {
 
 
   const submit = (data) => {
+setErr("Please Wait Loding...")
     axios
       .post(`https://online-shop-by-jin.herokuapp.com/users/login`, data)
       .then((result) => {
@@ -26,6 +27,7 @@ const Login = () => {
         let token = JSON.parse(localStorage.getItem("x-auth"));
         axios.defaults.headers.common["x-auth"] = token;
         if (result.status == 200) {
+          setErr("Done.")
           setRedirect(true);
           dispatch({ type: "RECENT_ITEM_EMPTY"});
         }
@@ -67,10 +69,13 @@ const Login = () => {
             {errors.password && <span>This field is required</span>}
           </label>
 
-          <div className="text-center text-danger">{err}</div>
           <button type="submit" className="btnlogin">
             Login
           </button>
+
+          {err ?<div className="register-message">
+        {err}
+        </div> :""}
           </form>
           
       </div>

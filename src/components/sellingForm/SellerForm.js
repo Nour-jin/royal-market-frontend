@@ -48,9 +48,12 @@ const SellerForm = () => {
     auth();
     setmessage("Loading...")
     postReq(onData).then(response => {
-      
       if (response.data) {
         setmessage("The product has been added, you can see it in the products list")
+      }
+    }).catch((error) => {
+      if (error.response.status === 500) {
+        setmessage("Please Fill all the Field");
       }
     });
   };
@@ -117,10 +120,9 @@ const SellerForm = () => {
           Submit
         </button>
         </form>
-        <div className="text-center mt-3">
-          {message}
-        {message ?  <p>Do you want go to <Link to="/" className="vilote">Home Page</Link> </p> :""}
-        </div>
+        {message ? <div className="sell-message">
+          <div><div>{message}</div> Do you want go back to <Link to="/">Home Page</Link> </div>
+        </div>:""}
         
       <div className="photosReview">
         {inputText.img.map((im) => (

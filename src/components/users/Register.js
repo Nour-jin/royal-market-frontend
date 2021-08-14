@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { Redirect } from "react-router-dom";
 import Adress from "../adress/Adress";
 const Register = () => {
+  const [redirect, setRedirect] = useState(false);
+  const [err, setErr] = useState("");
   const {
     register,
     formState: { errors },
@@ -14,14 +17,20 @@ const Register = () => {
   password.current = watch("password", "");
 
   const submit = (data) => {
-   
-
-  
-    
-    console.log("input", data);
-    axios.post(`https://online-shop-by-jin.herokuapp.com/users/`, data).then((result) => {
-      console.log("result", result);
-    });
+    axios.post(`https://online-shop-by-jin.herokuapp.com/users/`, data).then((response) => {
+      if (response.data) {
+        setRedirect(true)
+      }
+      console.log("result", response.data);
+    }).catch((err)=> {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+       if (err.response.status === 500) {
+        setErr("User Name or Email already exists")
+         console.log(err.response.status);
+     
+       }
+     })
   };
 
   return (
@@ -85,8 +94,7 @@ const Register = () => {
         {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
         <label htmlFor="userName">
           <input
-            {...register("userName", { required: true , pattern: /[A-Za-z]{3}/,
-            message: 'Please enter a valid email',})}
+            {...register("userName", { required: true , pattern: /^[A-Za-z]+$/i})}
             id="userName"
             placeholder="userName"
           />
@@ -100,7 +108,12 @@ const Register = () => {
         <button className="btnRegister" type="submit">
           Sing Up
         </button>
+        {err ?<div className="register-message">
+        {err}
+        </div> :""}
       </form>
+     
+      {redirect ? <Redirect to="/" /> : ""}
     </div>
   );
 };
