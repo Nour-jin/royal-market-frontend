@@ -23,7 +23,7 @@ const BaskeApi = () => {
                   <BasketList product={el} dispatch={dispatch} />
                 ))
               ) : (
-                <h3 className="text-center">Watch List is Empty</h3>
+                <h3 className="text-center">Basket List is Empty</h3>
               )}
             </Masonry>
           </ResponsiveMasonry>
