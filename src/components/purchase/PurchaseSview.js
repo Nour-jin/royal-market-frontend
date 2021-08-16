@@ -6,13 +6,7 @@ import { likes } from "../api/rest-helper";
 
 function WatchList({ el, oneTime }) {
   const imgColor = el.img.map((imeEl) => imeEl.color.Vibrant);
-  const { user } = useContext(prodactsConext);
 
-  const likeHandler = (postId, userId) => {
-    likes(postId, userId).then((response) => {
-      oneTime();
-    });
-  };
 
   return (
     <Tilt
@@ -54,14 +48,6 @@ function WatchList({ el, oneTime }) {
             <div className="card3D-title">{el.title}</div>
             <div className="card3D-likeCount-watch">
               watchers {el.likeCount}
-            </div>
-            <div
-              onClick={() => {
-                likeHandler(el._id, user.user._id);
-              }}
-              className="card3D-icon-watch"
-            >
-              X
             </div>
           </div>
         </div>

@@ -5,7 +5,8 @@ import { Link, Redirect } from "react-router-dom";
 import { prodactsConext } from "../context/contextData";
 import { likes } from "../api/rest-helper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {img_url} from "../api/service-info"
+import { img_url } from "../api/service-info"
+import { auth, getReq } from "../api/rest-helper";
 function Card3D({ el }) {
   const [like, setlike] = useState(false);
   const imgColor = el.img.map((imeEl) => imeEl.color.Vibrant);
@@ -18,7 +19,6 @@ function Card3D({ el }) {
       setlike(false);
     }
   }, [el]);
-
 
   const likeHandler = (postId, userId) => {
     if (user.loggedIn === true) {
@@ -38,8 +38,6 @@ function Card3D({ el }) {
 
 
   return (
-
-
     <Tilt
       className="TiltCard3D"
       glareEnable={false}

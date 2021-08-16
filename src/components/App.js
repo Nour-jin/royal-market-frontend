@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./nav/NavBar";
 import Footer from "./footer/Footer";
 import SearchList from "./search/SearchList";
+import PurchaseEnd from "./basket/PurchaseEnd";
+import Purchase from'./purchase/Purchase'
 
 function App() {
   return (
@@ -21,13 +23,19 @@ function App() {
           <NavBar />
           <CheckLogIn path="/sellerForm" component={SellerForm} />
           <Route path="/" exact>
-            <HomeApi /> 
+            <HomeApi />
+            </Route>
+            <Route path="/purchaseEnd" exact>
+            <PurchaseEnd/>
           </Route>
           <Route path="/item/:id">
             <Item />
           </Route>
           <Route path="/watch">
             <WatchApi />
+          </Route>
+          <Route path="/purchase">
+          <CheckLogIn path="/purchase" component={Purchase} />
           </Route>
           <Route path="/search">
             <SearchList />

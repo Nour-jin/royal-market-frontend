@@ -35,7 +35,7 @@ const Register = () => {
 
   return (
     <div className="containerSeller">
-      <h2 className="segment">Register</h2>
+      <h2 className="segment">Create Account</h2>
       <form  action="#" onSubmit={handleSubmit(submit)}>
         <div className="formRegister">
 

@@ -13,6 +13,7 @@
 }
 
 #root {
+  
   overflow: hidden;
   position: relative;
 }
@@ -55,6 +56,7 @@ input {
   background-color: #ebecf0;
  /* text-shadow: 1px 1px 0 #fff; */
 }
+
 .logginForm{
   width: 500px;
 }
@@ -63,8 +65,10 @@ input {
   color: darkviolet;
 }
 
+/* seller sctions */
+
 .containerSeller{
-  height: 97.7vh;
+  height: 74.2vh;
   background: #ebecf0;
   display: flex;
   justify-content: center;
@@ -714,13 +718,17 @@ h6 {
   color: #fff;
 }
 .wideCardViwer {
+ 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: 0;
+  top: 0%;
 }
+
+/* ********** */
+
   .slideHeader {
   text-align: center;
   position: absolute;
@@ -1125,7 +1133,8 @@ g > path:nth-of-type(2) {
 /* slider */
 .slider-wrapper {
   position: relative;
-  margin: 50px;
+  margin: 2.5vw;
+  margin-bottom: 5vw;
   height: 30vh;
   overflow: hidden;
   border-radius: 30px;
@@ -1447,6 +1456,12 @@ nav {
   visibility: visible;
 }
 
+/* card main section */
+
+.card-main-section{
+  margin-bottom: 5vw;
+}
+
 /* Card3D */
 .TiltCard3D {
   -webkit-transform-style: preserve-3d;
@@ -1457,10 +1472,42 @@ nav {
 .TiltCard3D:hover .card3D .inner-card {
   transform: translateZ(60px);
 }
+
+/* Discount sctions */
+
+.Discount-section{
+
+}
 /* ******** Swiper ******** */
+.mySwiper h2{
+  position: relative;
+  top: 0;
+  font-weight: 900;
+ text-transform: uppercase;
+  color: #000;
+  font-size: 1vw;
+margin-top: 1.5vw;
+margin-left: 10px;
+margin-right: 5vw;
+}
+
+.mySwiper h2::after{
+  z-index: 100;
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 2px;
+margin-top: 1.2vw;
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(108,9,121,1) 35%, rgba(220,0,255,0.3267682072829131) 100%);
+}
 
 .swiper-container {
+overflow: visible !important;
 padding-left: 5vw !important;
+margin-bottom: 5vw;
 }
 
 .swiper-slide {
@@ -1469,14 +1516,17 @@ padding-left: 5vw !important;
 }
 
 .swiper-pagination-bullet {
-  transform: translate(0%, -300%);
-  padding: 7px;
-  text-align: center ;
-  line-height: 0px;
+  transform: translate(0%, -2vw);
+  width: 15px !important;
+  height: 15px !important;
   font-size: 12px;
   color: rgb(1, 1, 1);
   opacity: 1;
   background: rgba(1, 1, 1, 0.149);
+}
+
+.swiper-pagination-bullet{
+margin-left: 10px;
 }
 
 .swiper-pagination-bullet-active {
@@ -1487,11 +1537,12 @@ padding-left: 5vw !important;
 /* ********************* */
 
 .card3D {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14vw;
   background-color: #fff;
   position: relative;
-margin-top: 4vw;
-margin-bottom: 6vw;
   height: 20vw;
   box-shadow: 0 70px 63px -60px #4948488d;
   border-radius: 15px;
@@ -1513,7 +1564,9 @@ margin-bottom: 6vw;
   width: 100%;
   transition: transform 0.3s linear;
 }
+
 .shadow3d {
+  text-decoration: underline;
   background-position: bottom;
   background-size: cover;
   position: absolute;
@@ -1522,7 +1575,7 @@ margin-bottom: 6vw;
   width: 100%;
   height: 100%;
   z-index: -100;
-  filter: blur(55px);
+  filter: blur(3vw);
 }
 
 .card3D h2 {
@@ -1560,9 +1613,7 @@ margin-bottom: 6vw;
   bottom: 3%;
 }
 
-.cardRow {
-  margin: 40px 0 40px 0px;
-}
+
 
 .card3D {
   transition: all 0.2s ease-in-out;
@@ -1616,7 +1667,7 @@ margin-top: 100px;
   width: 100%;
   height: 100%;
   z-index: -10;
-  filter: blur(55px);
+  filter: blur(3vw);
 }
 
 .card3D-vertical h2 {
@@ -1676,6 +1727,20 @@ margin-top: 100px;
 
 /* watch */
 
+.watch-continar{
+  min-height: 74.2vh;
+}
+
+.watch-card-continar{
+  padding: 50px;
+  margin: 40px 0 40px 0px;
+}
+
+.watch-card-continar .TiltCard3D{
+  margin-bottom: 100px;
+
+}
+
 .card3D-icon-watch{
   position: absolute;
   right: -2%;
@@ -1724,6 +1789,81 @@ text-align: center;
   border-radius: 20px;
 }
 
+/* basket */
+.basket-continar{
+  position: relative;
+  height: 74.2vh;
+}
+
+.card3D-icon-basket{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(40%,-50%);
+  display: flex;
+  flex-direction: column;
+
+}
+.card3D-icon-basket button{
+margin: 10px;
+padding: 20px 10px;
+font-size: 30px;
+color: darkviolet;
+}
+
+.totalPrice{
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.totalPrice span span{
+  color: darkviolet;
+margin-right: 20px;
+font-size: 40px;
+}
+
+.totalPrice span {
+  font-size: 25px;
+  }
+
+.totalPrice button{
+padding: 15px 40px;
+font-size: 15px;
+  }
+/* ************* */
+
+
+/* login */
+
+.singUp-link{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.singUp-link a{
+  text-decoration: underline;
+  color: darkviolet;
+}
+
+/* ±±±±±±± */
+
+.purchase-end-contanier{
+  min-height: 74.3vh;
+  margin-top: ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.purchase-end-contanier a {
+  color: darkviolet;
+  text-decoration: underline;
+}
 
 
 

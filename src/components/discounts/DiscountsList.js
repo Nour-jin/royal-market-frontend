@@ -17,7 +17,7 @@ import {API_ROOT} from '../api/service-info'
 const DiscountsList = () => {
   const { discounts, dispatch } = useContext(prodactsConext);
   
-  SwiperCore.use([Pagination]);
+
   
 
   useEffect(() => {
@@ -27,21 +27,27 @@ const DiscountsList = () => {
       dispatch({ type: "FATCH_SUCCESS_DISCOUNTS", payload: response.data })
     })
     }, [])
-    const pagination = {
-      "clickable": true,
-      "renderBullet": function (index, className) {
-              return '<span class=\"' + className + '\">' + (index + 1) + '</span>';
-            }
-    }
 
   return (
-    <>
-     
-      <Swiper      slidesPerView={4}
-      spaceBetween={50} pagination={pagination}  className="mySwiper">
-              {discounts.map((el) => <SwiperSlide><DiscountsScreen el={el} /></SwiperSlide>)}
-      </Swiper>
-      </>
+    <div className="Discount-section">
+      {discounts.length ? (
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={50}
+          pagination={true}
+          className="mySwiper"
+        >
+           <h2>Most Discount</h2>
+          {discounts.map((el) => (
+            <SwiperSlide>
+              <DiscountsScreen el={el} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        ""
+      )}
+    </div>
       );
 }
 

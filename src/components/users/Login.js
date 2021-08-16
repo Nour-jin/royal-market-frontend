@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect,Link } from "react-router-dom";
 import { prodactsConext } from "../context/contextData";
 import { useForm } from "react-hook-form";
+
 
 const Login = () => {
   const { dispatch } = useContext(prodactsConext);
@@ -48,7 +49,8 @@ setErr("Please Wait Loding...")
      
         <div className="segment">
         {redirect ? <Redirect to="/" /> : ""}
-          <h1>Login</h1>
+          <h1>Welcome to Royal Market</h1>
+          <h4>It's your own online store, your comfort is important to us</h4>
         </div>
         <form className="logginForm" action="#" onSubmit={handleSubmit(submit)}>
           <label htmlFor="email">
@@ -72,6 +74,7 @@ setErr("Please Wait Loding...")
           <button type="submit" className="btnlogin">
             Login
           </button>
+          <div className="singUp-link">You dont have an Acount ? <Link className="" to="/register">Create Account</Link></div>
 
           {err ?<div className="register-message">
         {err}

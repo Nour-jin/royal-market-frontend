@@ -18,8 +18,6 @@ function HomeApi() {
   const { dispatch, products, user } = useContext(prodactsConext);
   const [curent, setcurent] = useState(Number);
 
-  console.log("user", user);
-  SwiperCore.use([Pagination]);
   // Creat Fack User if there is no real User
   if (!user.user) {
     const _id = Date.now();
@@ -144,12 +142,6 @@ function HomeApi() {
     },
   ];
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
 
   console.log("products", products);
 
@@ -190,18 +182,19 @@ function HomeApi() {
         <img width="100%" src="/images/Apple/apple3.jpg" alt="" />
       </div>
 
-      <div className="row ">
+      <div className="row card-main-section">
         {imagesTest.map((el, i) => (
           <ImgTest el={el} i={i} products={products} />
         ))}
       </div>
 
       <Swiper
-        slidesPerView={4}
+        slidesPerView={5}
         spaceBetween={50}
-        pagination={pagination}
+        pagination={true}
         className="mySwiper"
       >
+        <h2>Last Added</h2>
         {products.map((el) => (
           <SwiperSlide>
             <Card3D el={el} />

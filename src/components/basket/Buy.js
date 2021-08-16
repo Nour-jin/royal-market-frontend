@@ -7,24 +7,27 @@ import { prodactsConext } from '../context/contextData'
 const Buy = ({ card }) => {
   const { user } = useContext(prodactsConext)
 const [redirect, setredirect] = useState(false)
-
+const [redirectPurchase, setredirectPruchase] = useState(false)
 
   const buyItem = () => {
     if (user.loggedIn) {
-    const order = {
-      products: [],
-    };
+      const order = {
+        products: [],
+      };
+      
+      console.log("userId", user.user._id)
     
     card.forEach(element => {
       order.products.push({
         product: element._id,
+        user: user.user._id,
         amount: element.quantity
       });
     });
-
-
-    console.log("order", card);
-    axios.post(`http://localhost:3001/orders/`, order).then((result) => {
+      axios.post(`http://localhost:3001/orders/`, order).then((result) => {
+        if (result.status === 200) {
+          setredirectPruchase(true)
+        }
       console.log("result", result.data);
     })
   }else {
@@ -32,9 +35,13 @@ const [redirect, setredirect] = useState(false)
     }
   };
 
+  console.log(redirectPurchase)
+  
   return (
-   <>
+    <>
+      
       {redirect ? <Redirect to="/login" /> : ""}
+      {redirectPurchase ? <Redirect to="/purchaseEnd" /> : ""}
       <button className="btn-primary" onClick={buyItem}>
         Buy Now
       </button> 

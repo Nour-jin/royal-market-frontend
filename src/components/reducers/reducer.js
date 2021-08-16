@@ -104,6 +104,16 @@ export const watchReducer = (state, action) => {
   }
 };
 
+export const purchaseReducer = (state, action) => {
+  switch (action.type) {
+    case "GET_ORDER":
+        return action.payload;
+    default:
+      return state;
+  }
+};
+
+
 
 export const basketReducer = (state = { total: 0, items: [] }, action) => {
   switch (action.type) {
@@ -185,7 +195,12 @@ export const basketReducer = (state = { total: 0, items: [] }, action) => {
 const totalprice = (item) => {
   var totals = 0;
   item.forEach((el) => {
-    totals += el.quantity * el.price;
+    if (el.oldPrice ) {
+      totals += el.quantity * el.oldPrice;
+    } else {
+       totals += el.quantity * el.price;
+    }
+   
   });
   return totals;
 };
@@ -225,6 +240,7 @@ export const [profileReducer, initialProfile] = combineReducers({
   watch: [watchReducer, []],
   recent: [recentReducer, []],
   product: [productReducer, []],
+  order :[purchaseReducer, []],
   like: [likesReducer, false],
   search: [searchReducer, []],
   basket: [basketReducer, { items: [], total: 0 }],
