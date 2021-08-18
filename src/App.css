@@ -1792,7 +1792,7 @@ text-align: center;
 /* basket */
 .basket-continar{
   position: relative;
-  height: 74.2vh;
+  min-height: 74.2vh;
 }
 
 .card3D-icon-basket{
