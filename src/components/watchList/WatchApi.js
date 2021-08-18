@@ -33,7 +33,7 @@ const WatchApi = () => {
             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200:4 }}
             >
             <Masonry gutter={50}>
-              {watch.length ? watch.map((el) => <WatchList el={el} oneTime={oneTime} />) :  <h3 className="text-center">Watch List is Empty</h3>}
+              {watch.length ? watch.map((el) => <WatchList el={el} oneTime={oneTime} />) :  <h3 className="title-list">Watch List is Empty</h3>}
             </Masonry>
             </ResponsiveMasonry>
         </div>

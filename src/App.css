@@ -1636,6 +1636,7 @@ margin-top: 100px;
 }
 
 .card3D-vertical {
+  min-height: 14vw;
   background-color: #fff;
   position: relative;
   box-shadow: 0 70px 63px -60px #4948488d;
@@ -1863,6 +1864,14 @@ font-size: 15px;
 .purchase-end-contanier a {
   color: darkviolet;
   text-decoration: underline;
+}
+
+.title-list{
+  width: 100%;
+position: absolute;
+top: 10%;
+left: 45%;
+
 }
 
 

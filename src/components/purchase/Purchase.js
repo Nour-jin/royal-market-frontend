@@ -13,7 +13,7 @@ const Purchase = () => {
   
   const oneTime = () => {
     auth()
-    axios.get("http://localhost:3001/orders/").then(response => {
+    axios.get("https://online-shop-by-jin.herokuapp.com/orders/").then(response => {
       console.log("order", response)
       dispatch({ type: "GET_ORDER", payload: response.data })
     })
@@ -27,7 +27,7 @@ const Purchase = () => {
             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200:4 }}
             >
             <Masonry gutter={50}>
-              {order.length ? order.map(items => items.products.map(el => <PurchaseSview el={el.product} oneTime={oneTime} />)) :  <h3 className="text-center">Watch List is Empty</h3>}
+              {order.length ? order.map(items => items.products.map(el => <PurchaseSview el={el.product} oneTime={oneTime} />)) :  <h3 className="title-list">Purchase List is Empty</h3>}
             </Masonry>
             </ResponsiveMasonry>
         </div> 
