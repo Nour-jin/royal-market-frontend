@@ -13,7 +13,7 @@ const Purchase = () => {
   
   const oneTime = () => {
     auth()
-    axios.get("https://online-shop-by-jin.herokuapp.com/orders/").then(response => {
+    axios.get("https://online-shop-by-jin.herokuapp.com/orders").then(response => {
       console.log("order", response)
       dispatch({ type: "GET_ORDER", payload: response.data })
     })
