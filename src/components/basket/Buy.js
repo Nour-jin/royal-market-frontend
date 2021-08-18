@@ -24,7 +24,7 @@ const [redirectPurchase, setredirectPruchase] = useState(false)
         amount: element.quantity
       });
     });
-      axios.post(`https://online-shop-by-jin.herokuapp.com/orders/`, order).then((result) => {
+      axios.post(`https://online-shop-by-jin.herokuapp.com/orders`, order).then((result) => {
         if (result.status === 200) {
           setredirectPruchase(true)
         }
