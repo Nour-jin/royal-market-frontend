@@ -1,6 +1,7 @@
 .item {
   display: flex;
   padding: 70px;
+  margin-bottom: 200px;
 }
 
 .item-info {
