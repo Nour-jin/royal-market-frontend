@@ -70,7 +70,7 @@ function HomeApi() {
   const imagesTest = [
     {
       img: "/images/fashion/cool-young-stylish-sexy-woman-pink-luxury-dress-summer-fashion-trend-chic-style-sunglasses-blue-studio-background-shopping-holding-paper-bags-drinking-coffee-shopaholic-min.jpg",
-      title: "Apple Watch",
+      title: "Shoping",
       par: "odels promote, advertise, and showcase clothing, footwear, and other products. They participate in photoshoots, fashion shows, commercials, trade shows, and conventions as well as pose for sculptors, artists, and painters.",
       id: 1,
       scetion: "Model",
