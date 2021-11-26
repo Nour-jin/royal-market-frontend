@@ -39,7 +39,6 @@ function Card3D({ el }) {
 
   return (
     <Tilt
-      className="TiltCard3D"
       glareEnable={false}
       glareMaxOpacity={0.8}
       glareColor="#ffffff"
